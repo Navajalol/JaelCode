@@ -5,7 +5,8 @@ from tkinter import filedialog, messagebox
 
 def Main():
     root = tk.Tk()
-
+    root.withdraw()
+    
     choice = messagebox.askyesno(
         "Folder Selection", 
         "Do you want to select a parent folder (all subfolders included)? \n\n"
@@ -27,7 +28,7 @@ def Main():
             exit()
     
     destination_folder = filedialog.askdirectory(title = "select the destination folder")
-    if not destination_folder:
+    if not destination_folder: 
         print("no folder detected.")
         exit()
     
@@ -39,7 +40,7 @@ def Main():
 def select_multiple_folders():
     folders = []
     while True: 
-        folder = filedialog.askdirectory(Title = "select a source folder (Cancel to stop)")
+        folder = filedialog.askdirectory(title = "select a source folder (Cancel to stop)")
         if not folder: 
             break 
         folders.append(folder)
